@@ -1,8 +1,8 @@
 class SourceResponse {
   String? status;
   List<Source>? sources;
-
-  SourceResponse({this.status, this.sources});
+String? message;
+  SourceResponse({this.status, this.sources,this.message});
 
   SourceResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
@@ -11,7 +11,8 @@ class SourceResponse {
       json['sources'].forEach((v) {
         sources!.add(new Source.fromJson(v));
       });
-    }
+    }else
+      message ==json['message'];
   }
 
   Map<String, dynamic> toJson() {
@@ -32,6 +33,7 @@ class Source {
   String? category;
   String? language;
   String? country;
+  String? message;
 
   Source(
       {this.id,
@@ -40,7 +42,8 @@ class Source {
         this.url,
         this.category,
         this.language,
-        this.country});
+        this.country,
+        this.message});
 
   Source.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -50,6 +53,7 @@ class Source {
     category = json['category'];
     language = json['language'];
     country = json['country'];
+    message = json['message'];
   }
 
   Map<String, dynamic> toJson() {
@@ -61,6 +65,7 @@ class Source {
     data['category'] = this.category;
     data['language'] = this.language;
     data['country'] = this.country;
+    data['message'] = this.message;
     return data;
   }
 }
