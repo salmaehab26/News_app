@@ -3,6 +3,7 @@ import 'package:news/API/api_manager.dart';
 import 'package:news/Drawer/HomeDrawer.dart';
 import 'package:news/Home/Category/CategoryDetails.dart';
 
+import 'Home/Category/CategoryDetails_cubit.dart';
 import 'Home/Category/Category_Fragment.dart';
 import 'Model/Category.dart';
 import 'Settings/Settings.dart';

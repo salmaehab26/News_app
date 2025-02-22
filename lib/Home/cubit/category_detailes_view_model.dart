@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/cubit/sources_stats.dart';
+import 'package:news/Home/cubit/sources_stats.dart';
 
-import '../API/api_manager.dart';
+import '../../API/api_manager.dart';
 
 class categorydetailsviewmodel extends Cubit<sourcestates> {
   categorydetailsviewmodel() :super(sourseloadingstate());
