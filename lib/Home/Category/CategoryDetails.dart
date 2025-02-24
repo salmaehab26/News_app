@@ -5,7 +5,7 @@
 // import '../../API/api_manager.dart';
 // import '../../Model/Category.dart';
 // import '../Tabs/tab_widget.dart';
-// import 'CategoryDetails_ViewModel.dart';
+// import 'CategoryDetails_ViewModel_providor.dart';
 //
 // class CategoryDetails extends StatefulWidget {
 //   CategoryDetails({super.key, required this.category});

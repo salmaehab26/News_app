@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'Tab_item.dart';
 import '../../Model/sources_response.dart';
-import '../News/News_Widget.dart';
+import '../News/News_Widget_cubit.dart';
 
 class tab_widget extends StatefulWidget {
   List<Source> sourceslist;
@@ -42,7 +42,7 @@ class _tab_widgetState extends State<tab_widget> {
                 .toList(),
           ),
           Expanded(child:
-          News_Widget( source: widget.sourceslist[selectedIndex],)
+          News_Widget_cubit( source: widget.sourceslist[selectedIndex],)
       )
         ],
       ),

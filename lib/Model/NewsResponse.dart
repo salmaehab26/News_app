@@ -3,12 +3,16 @@ import 'sources_response.dart';
 
 class SourceDetailsResponse {
   SourceDetailsResponse({
+    this.message,
       this.status, 
       this.totalResults, 
-      this.articles,});
+      this.articles,
+  });
 
   SourceDetailsResponse.fromJson(dynamic json) {
     status = json['status'];
+    message = json['message'];
+
     totalResults = json['totalResults'];
     if (json['articles'] != null) {
       articles = [];
@@ -20,10 +24,12 @@ class SourceDetailsResponse {
   String? status;
   int? totalResults;
   List<Articles>? articles;
+  String? message;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['status'] = status;
+    map['message'] =message;
     map['totalResults'] = totalResults;
     if (articles != null) {
       map['articles'] = articles?.map((v) => v.toJson()).toList();
