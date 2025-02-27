@@ -44,7 +44,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
             ],
           );
         } else if (state is sourcesucssesstate) {
-          return tab_widget(sourceslist: state.sourcesList!);
+          return tab_widget(sourceslist: state.sourcesList);
         }
         return Container();
       },

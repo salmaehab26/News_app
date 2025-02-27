@@ -1,11 +1,17 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'home.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+WidgetsFlutterBinding.ensureInitialized();
+final documentsdir = await getApplicationDocumentsDirectory();
+ Hive.init(documentsdir.path);
+
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {

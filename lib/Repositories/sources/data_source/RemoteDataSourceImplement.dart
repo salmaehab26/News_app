@@ -7,9 +7,9 @@ class RemoteDataSourceImple implements SourceRemoteDataSource{
    RemoteDataSourceImple({required this.Apimanger});
     Apimanager Apimanger ;
   @override
-  Future<SourceResponse> getSources(String categoryId) async{
-    var resposne = await Apimanger.getSources(categoryId);
-    return resposne;
+  Future<SourceResponse?> getSources(String categoryId) async{
+    var response = await Apimanger.getSources(categoryId);
+    return response;
 
   }
 }
