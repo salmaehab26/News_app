@@ -6,5 +6,5 @@ abstract class SourceRemoteDataSource{
 }
 abstract class SourceLocalDataSource{
   Future<SourceResponse?>getSources(String categoryId);
-  void SaveSources(SourceResponse? sourceResponse);
+  void SaveSources(SourceResponse? sourceResponse, String category);
 }

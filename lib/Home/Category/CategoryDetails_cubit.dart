@@ -39,6 +39,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
               ElevatedButton(
                   onPressed: () {
                     viewModel.getsources(widget.category.Id);
+                    print ("error accure");
                   },
                   child: Text("try again"))
             ],

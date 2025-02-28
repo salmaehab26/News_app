@@ -4,6 +4,14 @@ import '../Model/NewsResponse.dart';
 import '../Model/sources_response.dart';
 
 class Apimanager {
+  Apimanager._();
+  static Apimanager? _instance;
+  static Apimanager GetInstance(){
+    if (_instance==null){
+      _instance= Apimanager._();
+    }
+    return _instance!;
+  }
 // https://newsapi.org/v2/top-headlines/sources?apiKey=
 
    Future<SourceResponse> getSources( String categoryId) async {

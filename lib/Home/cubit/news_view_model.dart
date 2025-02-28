@@ -16,7 +16,7 @@ class NewsViewmMdel extends Cubit<NewsStatus> {
   late NewsRemoteDataSource newsRemoteDataSource;
   late Source source;
   NewsViewmMdel() :super(newsloadingstate()) {
-      apimanager=Apimanager();
+      apimanager=Apimanager.GetInstance();
       source=Source();
       newsRemoteDataSource = NewsRemoteDataSourceImple(apimanager:apimanager );
       newsRepository = NewsRepositoryImple(newsRemoteDataSource: newsRemoteDataSource);

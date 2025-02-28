@@ -14,12 +14,13 @@ class categorydetailsviewmodel extends Cubit<sourcestates> {
   late SourceLocalDataSource sourceLocalDataSource;
 
   categorydetailsviewmodel() : super(sourseloadingstate()) {
-    apimanager = Apimanager();
+    apimanager = Apimanager.GetInstance();
     sourceLocalDataSource=LocalDataSourceImple();
     sourceRemoteDataSource = RemoteDataSourceImple(Apimanger: apimanager);
     sourceRepository = SourceRepositoryImplement(
         RemoteDataSource: sourceRemoteDataSource,
-        LocalDataSource: sourceLocalDataSource);
+        LocalDataSource: sourceLocalDataSource
+    );
   }
 
   void getsources(String categoryId) async {
@@ -29,11 +30,16 @@ class categorydetailsviewmodel extends Cubit<sourcestates> {
       var resposne = await sourceRepository.getSources(categoryId);
       if (resposne?.status == "error") {
         emit(sourceerrorstate(errormessage: resposne!.message!));
+        print("source error state");
+
       } else {
         emit(sourcesucssesstate(sourcesList: resposne!.sources!));
+        print("sucsses");
       }
     } catch (e) {
       emit(sourceerrorstate(errormessage: e.toString()));
+      print("source error state 1");
+
     }
   }
 }
